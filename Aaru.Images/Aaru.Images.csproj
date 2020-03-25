@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -178,6 +178,14 @@
     <Compile Include="CopyTape\Read.cs" />
     <Compile Include="CopyTape\Unsupported.cs" />
     <Compile Include="CopyTape\Write.cs" />
+    <Compile Include="TZX\Constants.cs" />
+    <Compile Include="TZX\TZX.cs" />
+    <Compile Include="TZX\Helpers.cs" />
+    <Compile Include="TZX\Identify.cs" />
+    <Compile Include="TZX\Properties.cs" />
+    <Compile Include="TZX\Read.cs" />
+    <Compile Include="TZX\Structs.cs" />
+    <Compile Include="TZX\Unsupported.cs" />
     <Compile Include="CPCDSK\Constants.cs" />
     <Compile Include="CPCDSK\Helpers.cs" />
     <Compile Include="CPCDSK\Identify.cs" />

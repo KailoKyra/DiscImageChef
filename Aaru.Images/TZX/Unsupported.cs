@@ -43,6 +43,17 @@ namespace Aaru.DiscImages
         public byte[] ReadSectorLong(ulong sectorAddress) =>
             throw new FeatureUnsupportedImageException("Feature not supported by image format");
 
+        public byte[] ReadSector(ulong sectorAddress) =>
+            throw new FeatureUnsupportedImageException("Feature not supported by image format");
+        public byte[] ReadSectors(ulong a, uint b) =>
+            throw new FeatureUnsupportedImageException("Feature not supported by image format");
+        public byte[] ReadSectorsTag(ulong a, uint b, SectorTagType c) =>
+            throw new FeatureUnsupportedImageException("Feature not supported by image format");
+
+        public byte[] ReadSectorTag(ulong a, SectorTagType b) =>
+            throw new FeatureUnsupportedImageException("Feature not supported by image format");
+
+
         public byte[] ReadSectorsLong(ulong sectorAddress, uint length) =>
             throw new FeatureUnsupportedImageException("Feature not supported by image format");
     }

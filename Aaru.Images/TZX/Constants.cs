@@ -37,7 +37,7 @@ namespace Aaru.DiscImages
         /// <summary>Identifier for CPC CDT disk images, always "ZXTape!"</summary>
         readonly byte[] tzxMagic = 
         {
-            0x5a, 0x58, 0x54, 0x61, 0x70, 0x65, 0x21
+            0x5a, 0x58, 0x54, 0x61, 0x70, 0x65, 0x21, 0x1A
         };
 
         readonly uint z80TStatePerSecond = 3500000;

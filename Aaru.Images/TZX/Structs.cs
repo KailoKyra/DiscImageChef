@@ -48,10 +48,8 @@ namespace Aaru.DiscImages
             /// containing the major and minor version numbers. Then the main body of the file follows.
             /// It consists of a mixture of blocks, each identified by an ID byte.
             /// </summary>
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 7)]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
             public readonly byte[] magic;
-            /// <summary> End of text file marker. Should always be 0x1A </summary>
-            public readonly byte endOfFileMarker;
             /// <summary>TZX major revision number</summary>
             public readonly byte versionMajor;
             /// <summary>TZX minor revision number</summary>

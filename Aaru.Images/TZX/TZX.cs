@@ -2,14 +2,14 @@
 // Aaru Data Preservation Suite
 // ----------------------------------------------------------------------------
 //
-// Filename       : CPCDSK.cs
+// Filename       : TZX.cs
 // Author(s)      : Natalia Portillo <claunia@claunia.com>
 //
-// Component      : Disk image plugins.
+// Component      : Tape image plugins.
 //
 // --[ Description ] ----------------------------------------------------------
 //
-//     Manages CPC Digital Tape tape images.
+//     Manages ZX Spectrum Tape images.
 //
 // --[ License ] --------------------------------------------------------------
 //
@@ -47,7 +47,7 @@ namespace Aaru.DiscImages
         public TZX() => imageInfo = new ImageInfo
         {
             ReadableSectorTags = new List<SectorTagType>(), ReadableMediaTags = new List<MediaTagType>(),
-            HasPartitions      = false, HasSessions                           = false, Version = null,
+            HasPartitions      = false, HasSessions = false, Version = null,
             Application        = null,
             ApplicationVersion = null, Creator = null, Comments = null,
             MediaManufacturer  = null,

@@ -52,7 +52,7 @@ namespace Aaru.DiscImages
             stream.Read(headerBuffer, 0, 10);
             TZXHeader header = Marshal.ByteArrayToStructureLittleEndian<TZXHeader>(headerBuffer);
 
-            return header.magic.SequenceEqual(tzxMagic);
+            return header.magic.SequenceEqual(tzxMagic) && (header.endOfFileMarker == endOfFileMarker);
         }
     }
 }

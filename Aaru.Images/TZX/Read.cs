@@ -59,7 +59,7 @@ namespace Aaru.DiscImages
             stream.Read(headerB, 0, 10);
             TZXHeader header = Marshal.ByteArrayToStructureLittleEndian<TZXHeader>(headerB);
 
-            if(!header.magic.SequenceEqual(tzxMagic))
+            if(!header.magic.SequenceEqual(tzxMagic) || header.endOfFileMarker != endOfFileMarker)
                 return false;
 
             AaruConsole.DebugWriteLine("TZX plugin", "header.magic = \"{0}\"",
@@ -72,7 +72,7 @@ namespace Aaru.DiscImages
             imageInfo.CreationTime         = imageFilter.GetCreationTime();
             imageInfo.LastModificationTime = imageFilter.GetLastWriteTime();
             imageInfo.MediaTitle           = Path.GetFileNameWithoutExtension(imageFilter.GetFilename());
-            imageInfo.XmlMediaType         = XmlMediaType.AudioMedia;
+            imageInfo.XmlMediaType         = XmlMediaType.BlockMedia;
             imageInfo.MediaType            = MediaType.CompactCassette;
 
             return true;

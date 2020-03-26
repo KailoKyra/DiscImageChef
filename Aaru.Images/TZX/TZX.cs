@@ -37,17 +37,23 @@ using Aaru.CommonTypes.Structs;
 
 namespace Aaru.DiscImages
 {
-    public partial class TZX : IMediaImage
+    public partial class TZX : ITapeImage
     {
-        Dictionary<ulong, byte[]> addressMarks;
-        bool                      extended;
-        ImageInfo                 imageInfo;
-        Dictionary<ulong, byte[]> sectors;
+        ImageInfo imageInfo;
+        public List<TapeFile> Files;
+        public List<TapePartition> TapePartitions;
+        public bool IsTape = true;
+
+        List<TapeFile> ITapeImage.Files { get; }
+        List<TapePartition> ITapeImage.TapePartitions { get; }
+        bool ITapeImage.IsTape { get; }
 
         public TZX() => imageInfo = new ImageInfo
         {
             ReadableSectorTags = new List<SectorTagType>(), ReadableMediaTags = new List<MediaTagType>(),
-            HasPartitions      = false, HasSessions = false, Version = null,
+            HasPartitions      = false,
+            HasSessions        = false,
+            Version            = null,
             Application        = null,
             ApplicationVersion = null, Creator = null, Comments = null,
             MediaManufacturer  = null,

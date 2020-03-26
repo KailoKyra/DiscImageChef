@@ -43,13 +43,15 @@ namespace Aaru.DiscImages
         struct TZXHeader
         {
             /// <summary>TZX Signature (always ZXTape!)
-            /// The file is identified with the first 8 bytes being 'ZXTape!' plus 
+            /// The file is identified with the first 7 bytes being 'ZXTape!' plus 
             /// the 'end of file' byte 26 (1A hex). This is followed by two bytes 
             /// containing the major and minor version numbers. Then the main body of the file follows.
             /// It consists of a mixture of blocks, each identified by an ID byte.
             /// </summary>
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 7)]
             public readonly byte[] magic;
+            /// <summary>TZX end of file marker (should be 0x1A) </summary>
+            public readonly byte endOfFileMarker;
             /// <summary>TZX major revision number</summary>
             public readonly byte versionMajor;
             /// <summary>TZX minor revision number</summary>
